@@ -1,0 +1,20 @@
+name: Empty Commit
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # runs at 00:00 UTC every day
+
+jobs:
+  Commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout 
+        uses: actions/checkout@v2
+
+
+      - name: Commit
+        run: |
+          git config --global user.email ${{ EMAIL_GIT }} 
+          git config --global user.name ${{ USERNAME_GIT }}
+          git commit --allow-empty -m "empty commit"
+          git push origin main
