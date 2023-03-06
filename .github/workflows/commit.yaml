@@ -3,6 +3,7 @@ name: Empty Commit
 on:
   schedule:
     - cron: '0 0 * * *' # runs at 00:00 UTC every day
+  workflow_dispatch:
 
 jobs:
   Commit:
@@ -16,5 +17,5 @@ jobs:
         run: |
           git config --global user.email ${{ EMAIL_GIT }} 
           git config --global user.name ${{ USERNAME_GIT }}
-          git commit --allow-empty -m "empty commit"
+          git commit --allow-empty -m "Plant a grass!!!"
           git push origin main
