@@ -15,7 +15,7 @@ jobs:
 
       - name: Commit
         run: |
-          git config --global user.email ${{ EMAIL_GIT }} 
-          git config --global user.name ${{ USERNAME_GIT }}
+          git config --global user.email ${{ secrets.EMAIL_GIT }} 
+          git config --global user.name ${{ secrets.USERNAME_GIT }}
           git commit --allow-empty -m "Plant a grass!!!"
           git push origin main
